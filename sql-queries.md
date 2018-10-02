@@ -11,3 +11,15 @@
 >FROM occupations\
 >GROUP BY occupation\
 >ORDER BY count(occupation), occupation ASC;
+
+### 2. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-3/download_pdf?language=English)
+**Includes: Mod function**
+
+>SELECT DISTINCT CITY FROM STATION WHERE mod(ID,2)= 0;
+
+
+### 3. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-5/download_pdf?language=English)
+**Includes: Length function, Ordering**
+
+>SELECT CITY, LENGTH(CITY) as mlen FROM STATION ORDER BY mlen desc, city asc limit 1;\
+>SELECT CITY, LENGTH(CITY) as mlen FROM STATION ORDER BY mlen asc, city asc limit 1;
