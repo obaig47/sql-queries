@@ -23,10 +23,10 @@ WHERE MOD(id,2)= 0;
 ### 3. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-5/download_pdf?language=English)
 **Includes: Length function, Ordering, Aliasing**
 
->SELECT city, LENGTH(city) AS mlen\
->FROM station\
->ORDER BY mlen DESC, city ASC LIMIT 1;
+>SELECT city, LENGTH(city) AS len\
+FROM station\
+ORDER BY len DESC, city ASC LIMIT 1;
 
->SELECT city, LENGTH(city) AS mlen\
->FROM station\
->ORDER BY mlen ASC, city ASC LIMIT 1;
+>SELECT city, LENGTH(city) AS len\
+FROM station\
+ORDER BY len ASC, city ASC LIMIT 1;
