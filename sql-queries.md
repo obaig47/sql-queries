@@ -30,3 +30,9 @@ ORDER BY len DESC, city ASC LIMIT 1;
 >SELECT city, LENGTH(city) AS len\
 FROM station\
 ORDER BY len ASC, city ASC LIMIT 1;
+
+### 4. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-18/download_pdf?language=English)
+**Includes: Min/Max function, Round function, Absolute Value function, Formulas**
+
+>SELECT ROUND(ABS(MIN(lat_n)-MAX(lat_n)) + ABS(MIN(long_w)-MAX(long_w)),4) AS ManhattanDistance\
+FROM station;
