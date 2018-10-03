@@ -55,7 +55,7 @@ FROM station;
 >SELECT city\
 FROM station\
 WHERE (LOWER(SUBSTR(city,1,1)) IN ('a','e','i','o','u') AND SUBSTR(city,-1) NOT IN ('a','e','i','o','u'))\
-UNION\                                                               
+UNION                                                               
 SELECT city\
 FROM station\
 WHERE (LOWER(SUBSTR(city,1,1)) NOT IN ('a','e','i','o','u') AND SUBSTR(city,-1) IN ('a','e','i','o','u'))\
