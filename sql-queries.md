@@ -7,7 +7,7 @@
 FROM occupations\
 ORDER BY name ASC;
 
->SELECT 'There are a total of ' || count(occupation) || ' ' || lower(occupation) || 's.'\
+>SELECT 'There are a total of ' || COUNT(occupation) || ' ' || LOWER(occupation) || 's.'\
 FROM occupations\
 GROUP BY occupation\
 ORDER BY COUNT(occupation), occupation ASC;
@@ -32,7 +32,7 @@ FROM station\
 ORDER BY len ASC, city ASC LIMIT 1;
 
 ### 4. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-18/download_pdf?language=English)
-**Includes: Round function, Absolute value function, Formulas**
+**Includes: Round function, Absolute value function**
 
 >SELECT ROUND(ABS(MIN(lat_n)-MAX(lat_n)) + ABS(MIN(long_w)-MAX(long_w)),4) AS ManhattanDistance\
 FROM station;
@@ -43,9 +43,23 @@ FROM station;
 >SELECT ROUND(SQRT(POWER(MIN(lat_n)-MAX(lat_n),2) + POWER(MIN(long_w)-MAX(long_w),2)),4) AS EuclidianDistance\
 FROM station;
 
-
 ### 6. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-20/download_pdf?language=English)
 **Includes: Median function**
 
 >SELECT ROUND(MEDIAN(lat_n),4) AS NorthLatMedian\
 FROM station;
+
+### 7. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-11/download_pdf?language=English)
+**Includes: Union, Substring function, Lower function, In clause**
+
+>SELECT city\
+FROM station\
+WHERE (LOWER(SUBSTR(city,1,1)) IN ('a','e','i','o','u') AND SUBSTR(city,-1) NOT IN ('a','e','i','o','u'))\
+UNION\                                                               
+SELECT city\
+FROM station\
+WHERE (LOWER(SUBSTR(city,1,1)) NOT IN ('a','e','i','o','u') AND SUBSTR(city,-1) IN ('a','e','i','o','u'))\
+UNION\
+SELECT city\
+FROM station\
+WHERE (LOWER(SUBSTR(city,1,1)) NOT IN ('a','e','i','o','u') AND SUBSTR(city,-1) NOT IN ('a','e','i','o','u'));
