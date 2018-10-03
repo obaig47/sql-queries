@@ -4,8 +4,8 @@
 **Includes: Concatenation, Grouping, Ordering**
 
 >SELECT name || '(' || SUBSTR(occupation,1,1) || ')'\
->FROM occupations\
->ORDER BY name ASC;
+  FROM occupations\
+  ORDER BY name ASC;
 
 >SELECT 'There are a total of ' || count(occupation) || ' ' || lower(occupation) || 's.'\
 >FROM occupations\
@@ -32,7 +32,13 @@ FROM station\
 ORDER BY len ASC, city ASC LIMIT 1;
 
 ### 4. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-18/download_pdf?language=English)
-**Includes: Min/Max function, Round function, Absolute Value function, Formulas**
+**Includes: Round function, Absolute value function, Formulas**
 
 >SELECT ROUND(ABS(MIN(lat_n)-MAX(lat_n)) + ABS(MIN(long_w)-MAX(long_w)),4) AS ManhattanDistance\
+FROM station;
+
+### 5. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-19/download_pdf?language=English)
+**Includes: Round function, Absolute value function, Square root function, Power (exponent) function, Formulas**
+
+>SELECT ROUND(SQRT(POWER(MIN(lat_n)-MAX(lat_n),2) + POWER(MIN(long_w)-MAX(long_w),2)),4) AS EuclidianDistance\
 FROM station;
