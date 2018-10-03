@@ -4,13 +4,13 @@
 **Includes: Concatenation, Grouping, Ordering**
 
 >SELECT name || '(' || SUBSTR(occupation,1,1) || ')'\
-  FROM occupations\
-  ORDER BY name ASC;
+FROM occupations\
+ORDER BY name ASC;
 
 >SELECT 'There are a total of ' || count(occupation) || ' ' || lower(occupation) || 's.'\
->FROM occupations\
->GROUP BY occupation\
->ORDER BY COUNT(occupation), occupation ASC;
+FROM occupations\
+GROUP BY occupation\
+ORDER BY COUNT(occupation), occupation ASC;
 
 ### 2. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-3/download_pdf?language=English)
 **Includes: Mod function**
@@ -38,7 +38,14 @@ ORDER BY len ASC, city ASC LIMIT 1;
 FROM station;
 
 ### 5. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-19/download_pdf?language=English)
-**Includes: Round function, Absolute value function, Square root function, Power (exponent) function, Formulas**
+**Includes: Square root function, Power (exponent) function**
 
 >SELECT ROUND(SQRT(POWER(MIN(lat_n)-MAX(lat_n),2) + POWER(MIN(long_w)-MAX(long_w),2)),4) AS EuclidianDistance\
+FROM station;
+
+
+### 6. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-20/download_pdf?language=English)
+**Includes: Median function**
+
+>SELECT ROUND(MEDIAN(lat_n),4) AS NorthLatMedian\
 FROM station;
