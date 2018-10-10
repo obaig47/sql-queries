@@ -64,7 +64,7 @@ SELECT city\
 FROM station\
 WHERE (LOWER(SUBSTR(city,1,1)) NOT IN ('a','e','i','o','u') AND SUBSTR(city,-1) NOT IN ('a','e','i','o','u'));
 
-### 8. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-11/download_pdf?language=English)
+### 8. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/occupations/download_pdf?language=English)
 **Includes: Row Number function, Partition By, Pivot Table, Nulls Last**
 
 >SELECT * FROM (\
