@@ -63,3 +63,19 @@ UNION\
 SELECT city\
 FROM station\
 WHERE (LOWER(SUBSTR(city,1,1)) NOT IN ('a','e','i','o','u') AND SUBSTR(city,-1) NOT IN ('a','e','i','o','u'));
+
+### 8. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-11/download_pdf?language=English)
+**Includes: Row Number function, Partition By, Pivot Table, Nulls Last**
+
+>SELECT * FROM (\
+  SELECT Doctor, Professor, Singer, Actor FROM(\
+    SELECT name, occupation, ROW_NUMBER() OVER (PARTITION BY occupation ORDER BY name)\
+    FROM occupations\
+  )\
+  PIVOT (\
+    MAX(name)\
+    FOR (occupation)\
+    IN ('Doctor' as Doctor, 'Professor' as Professor, 'Singer' as Singer, 'Actor' as Actor)\
+  )\
+)\
+ORDER BY Doctor ASC NULLS LAST, Professor ASC NULLS LAST, Singer ASC NULLS LAST, Actor ASC NULLS LAST;
