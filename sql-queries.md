@@ -2,16 +2,16 @@
 
 ### 1. [Problem Description](https://hackerrank-challenge-pdfs.s3.amazonaws.com/12889-the-pads-English?AWSAccessKeyId=AKIAJ4WZFDFQTZRGO3QA&Expires=1538427842&Signature=DadVShqj2QPpMDhDn3X1cm5HTD4%3D&response-content-disposition=inline%3B%20filename%3Dthe-pads-English.pdf&response-content-type=application%2Fpdf)
 **Includes: Concatenation, Grouping, Ordering**
-
->SELECT name || '(' || SUBSTR(occupation,1,1) || ')'\
-FROM occupations\
+```SQL
+SELECT name || '(' || SUBSTR(occupation,1,1) || ')'
+FROM occupations
 ORDER BY name ASC;
 
->SELECT 'There are a total of ' || COUNT(occupation) || ' ' || LOWER(occupation) || 's.'\
-FROM occupations\
-GROUP BY occupation\
+SELECT 'There are a total of ' || COUNT(occupation) || ' ' || LOWER(occupation) || 's.'
+FROM occupations
+GROUP BY occupation
 ORDER BY COUNT(occupation), occupation ASC;
-
+```
 ### 2. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-3/download_pdf?language=English)
 **Includes: Mod function**
 
