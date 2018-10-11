@@ -56,7 +56,7 @@ FROM station;
 ### 7. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/weather-observation-station-11/download_pdf?language=English)
 **Includes: Union, Substring function, Lower function, In clause**
 ```SQL
->SELECT city
+SELECT city
 FROM station
 WHERE (LOWER(SUBSTR(city,1,1)) IN ('a','e','i','o','u') AND SUBSTR(city,-1) NOT IN ('a','e','i','o','u'))
 UNION                                                               
@@ -72,7 +72,7 @@ WHERE (LOWER(SUBSTR(city,1,1)) NOT IN ('a','e','i','o','u') AND SUBSTR(city,-1) 
 ### 8. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/occupations/download_pdf?language=English)
 **Includes: Row Number function, Partition By, Pivot Table, Nulls Last**
 ```SQL
->SELECT * FROM (
+SELECT * FROM (
   SELECT Doctor, Professor, Singer, Actor FROM(
     SELECT name, occupation, ROW_NUMBER() OVER (PARTITION BY occupation ORDER BY name)
     FROM occupations
