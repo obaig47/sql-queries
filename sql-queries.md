@@ -85,3 +85,21 @@ SELECT * FROM (
 )
 ORDER BY Doctor ASC NULLS LAST, Professor ASC NULLS LAST, Singer ASC NULLS LAST, Actor ASC NULLS LAST;
 ```
+
+### 9. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/binary-search-tree-1/download_pdf?language=English)
+**Includes: Case Expression, In clause**
+```SQL
+SELECT CASE
+    WHEN p IS NULL THEN CONCAT(n, ' Root')
+    WHEN n IN (SELECT DISTINCT p FROM bst) THEN CONCAT(n, ' Inner')
+    ELSE concat(n, ' Leaf')
+    END
+FROM bst
+ORDER BY n ASC;
+```
+
+<!-- ### 8. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/occupations/download_pdf?language=English)
+**Includes: Row Number function, Partition By, Pivot Table, Nulls Last**
+```SQL
+
+``` -->
