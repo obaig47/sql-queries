@@ -97,6 +97,19 @@ SELECT CASE
 FROM bst
 ORDER BY n ASC;
 ```
+### 10. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/binary-search-tree-1/download_pdf?language=English)
+**Includes: Grouping by operation**
+```SQL
+SELECT MAX(months * salary) AS earnings, COUNT(DISTINCT employee_id)
+FROM employee
+GROUP BY months*salary
+HAVING earnings = max(months * salary)
+ORDER BY earnings
+DESC LIMIT 1;
+```
+
+
+
 
 <!-- ### 8. [Problem Description](https://www.hackerrank.com/rest/contests/master/challenges/occupations/download_pdf?language=English)
 **Includes: Row Number function, Partition By, Pivot Table, Nulls Last**
