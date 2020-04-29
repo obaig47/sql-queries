@@ -107,6 +107,22 @@ HAVING earnings = max(months * salary)
 ORDER BY earnings
 DESC LIMIT 1;
 ```
+### 11. [Problem Description](https://hackerrank-challenge-pdfs.s3.amazonaws.com/12891-the-report-English?AWSAccessKeyId=AKIAJ4WZFDFQTZRGO3QA&Expires=1588180541&Signature=YqugT4xC9Yv3Y%2F%2Fm7o0jkyjU86A%3D&response-content-disposition=inline%3B%20filename%3Dthe-report-English.pdf&response-content-type=application%2Fpdf)
+**Includes: Joining between values**
+```SQL
+SELECT name, grade, marks
+FROM students s
+LEFT JOIN grades g ON s.marks BETWEEN g.min_mark and g.max_mark
+WHERE grade >= 8
+UNION
+SELECT NULL, grade, marks
+FROM students s
+LEFT JOIN grades g ON s.marks BETWEEN g.min_mark and g.max_mark
+WHERE grade < 8
+ORDER BY grade DESC, name ASC, marks ASC;
+```
+
+
 
 
 
