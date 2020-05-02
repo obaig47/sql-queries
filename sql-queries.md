@@ -122,6 +122,16 @@ WHERE grade < 8
 ORDER BY grade DESC, name ASC, marks ASC;
 ```
 
+### 12. [Problem Description](https://hackerrank-challenge-pdfs.s3.amazonaws.com/8336-average-population-of-each-continent-English?AWSAccessKeyId=AKIAJ4WZFDFQTZRGO3QA&Expires=1588447234&Signature=7%2F5MuX8cxVu2KNoIZLTW0E%2FUE5U%3D&response-content-disposition=inline%3B%20filename%3Daverage-population-of-each-continent-English.pdf&response-content-type=application%2Fpdf)
+**Includes: Group By, Floor, Inner Join**
+**Notes: Important to think of Group By in conjunction with the Average function based on the question**
+```SQL
+SELECT country.continent, FLOOR(AVG(city.population))
+FROM country
+JOIN city ON country.code = city.countrycode
+GROUP BY country.continent;
+```
+
 
 
 
